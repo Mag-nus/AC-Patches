@@ -2,9 +2,9 @@
 
 **This dll affects .net based plugins in the following ways:**
 * IDQueue has been changed:
-** The default time between requests still remains at 600ms.
-** When ID information is received from the server, the next ID in queue will be sent immediately unless an item in the queue exists that failed the initial try and is waiting for retry.
-** This allows fast single pipeline ID requesting for servers that do not throttle, and default decal IDQueue throttling for servers that do.
+  * The default time between requests still remains at 600ms.
+  * When ID information is received from the server, the next ID in queue will be sent immediately unless an item in the queue exists that failed the initial try and is waiting for retry.
+  * This allows fast single pipeline ID requesting for servers that do not throttle, and default decal IDQueue throttling for servers that do.
 
 ## Install Instructions
 * Close Decal if it's running.
