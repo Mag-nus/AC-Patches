@@ -1,7 +1,10 @@
 # Decal 3.0 (2.9.7.5) / Decal.Adapter.dll
 
 **This dll affects .net based plugins in the following ways:**
-* Requesting item information via RequestId() will no longer take a minimum of 600ms. The minimum is now 10ms.
+* IDQueue has been changed:
+** The default time between requests still remains at 600ms.
+** When ID information is received from the server, the next ID in queue will be sent immediately unless an item in the queue exists that failed the initial try and is waiting for retry.
+** This allows fast single pipeline ID requesting for servers that do not throttle, and default decal IDQueue throttling for servers that do.
 
 ## Install Instructions
 * Close Decal if it's running.
@@ -9,7 +12,7 @@
 * Rename your original Decal.Adapter.dll to Decal.Adapter.dll.orig
 * Download the Decal.Adapter.dll in this repository and copy it to the following 2 locations:
 * Your Decal installation folder, typically: "C:\Program Files (x86)\Decal 3.0\"
-* Your Asheron's Call installation folder, typically: "C:\Turbine\Asheron's Call"
+* Your Asheron's Call installation folder, typically: "C:\Turbine\Asheron's Call\"
 * Start Decal.
 
 ## Troubleshooting
